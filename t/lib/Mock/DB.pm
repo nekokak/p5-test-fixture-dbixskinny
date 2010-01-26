@@ -12,5 +12,13 @@ install_table foo => schema {
     /;
 };
 
+install_table bar => schema {
+    pk 'id';
+    columns qw/
+        id
+        name
+    /;
+};
+
 1;
 
