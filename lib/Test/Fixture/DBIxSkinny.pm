@@ -80,21 +80,59 @@ __END__
 
 =head1 NAME
 
-Test::Fixture::DBIxSkinny -
+Test::Fixture::DBIxSkinny - load fixture data to storage for DBIx::Skinny
 
 =head1 SYNOPSIS
 
+  # in your t/*.t
   use Test::Fixture::DBIxSkinny;
+  my $data = construct_fixture(
+    db      => Your::Skinny::Class,
+    fixture => 'fixture.yaml',
+  );
+
+  # in your fixture.yaml
+  - table: entry
+    name: entry1
+    data:
+      id: 1
+      title: my policy
+      body: shut the f*ck up and write some code
+      timestamp: 2008-01-01 11:22:44
+  - table: entry
+    name: entry2
+    data:
+      id: 2
+      title: please join
+      body: #coderepos-en@freenode.
+      timestamp: 2008-02-23 23:22:58
 
 =head1 DESCRIPTION
 
-Test::Fixture::DBIxSkinny is
+Test::Fixture::DBIxSkinny is fixture data loader for DBIx::Skinny.
+
+=head1 METHODS
+
+=head2 construct_fixture
+
+  my $data = construct_fixture(
+      db      => Your::Skinny::Class,
+      fixture => 'fixture.yaml',
+  );
+
+construct your fixture.
 
 =head1 AUTHOR
 
 Atsushi Kobayashi E<lt>nekokak _at_ gmail _dot_ comE<gt>
 
 =head1 SEE ALSO
+
+L<DBIx::Skinny>, L<Kwalify>
+
+=head1 THANKS
+
+L<Test::Fixture::DBIC::Schema>
 
 =head1 LICENSE
 
