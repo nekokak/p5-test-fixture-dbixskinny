@@ -134,6 +134,10 @@ L<DBIx::Skinny>, L<Kwalify>
 
 L<Test::Fixture::DBIC::Schema>
 
+=head1 REPOSITORY
+
+  git clone git://github.com/nekokak/p5-test-fixture-dbixskinny.git
+
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify
